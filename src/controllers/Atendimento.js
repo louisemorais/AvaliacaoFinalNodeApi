@@ -12,7 +12,7 @@ class ControllerAtendimento{
 
     async BuscarId(req,res){
         try{
-            const id= req.param.id;
+            const id= req.params.id;
             const atendimento = service.BuscarId(id);
             res.send({atendimento})
         }catch(e){
@@ -22,7 +22,7 @@ class ControllerAtendimento{
 
     async AlterarStatus(req,res){
         try{
-            const id= req.param.id;
+            const id= req.params.id;
             const atendimento = service.AlterarStatus(id);
             res.send({atendimento})
         }catch(e){
@@ -42,7 +42,7 @@ class ControllerAtendimento{
 
     async Alterar(req,res){
         try{
-            const id= req.param.id;
+            const id= req.params.id;
             const {dia,hora,valor}= req.body
             await service.Alterar(id,dia,hora,valor)
             res.send({message:"alterado com sucesso"})
@@ -53,7 +53,7 @@ class ControllerAtendimento{
 
     async Deletar(req,res){
         try{
-            const id= req.param.id;
+            const id= req.params.id;
             await service.Deletar(id)
             res.send({message: "deletado com sucesso"})
         }catch(e){

@@ -11,7 +11,7 @@ class ControllerClientes{
     }
     async BuscarId(req,res){
         try{
-            const id= req.param.id;
+            const id= req.params.id;
             const cliente = service.BuscarId(id);
             res.send({cliente})
         }catch(e){
@@ -29,7 +29,7 @@ class ControllerClientes{
     }
     async Alterar(req,res){
         try{
-            const id= req.param.id;
+            const id= req.params.id;
             const {nome, email,senha}= req.body
             await service.Alterar(id,nome,email,senha)
             res.send({message:"alterado com sucesso"})
@@ -39,7 +39,7 @@ class ControllerClientes{
     }
     async Deletar(req,res){
         try{
-            const id= req.param.id;
+            const id= req.params.id;
             await service.Deletar(id)
             res.send({message: "deletado com sucesso"})
         }catch(e){
