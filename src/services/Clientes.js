@@ -11,7 +11,7 @@ class ServiceClientes{
     }
     async Criar(nome, email, senha){
 
-        await model.create(nome,email,senha);
+        await model.create({nome,email,senha});
     }
     async Alterar(id,nome,email,senha){
         if(!id || isNaN(id) || !nome){

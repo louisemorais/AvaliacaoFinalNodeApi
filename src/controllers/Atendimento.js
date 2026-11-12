@@ -23,8 +23,8 @@ class ControllerAtendimento{
     async AlterarStatus(req,res){
         try{
             const id= req.params.id;
-            const atendimento = service.AlterarStatus(id);
-            res.send({atendimento})
+            await service.AlterarStatus(id);
+            res.send({message: "status alterado"})
         }catch(e){
             res.send({message: e.message})
         }
@@ -32,8 +32,8 @@ class ControllerAtendimento{
 
     async Criar(req,res){
         try{
-            const {dia,hora,valor,concluído}= req.body
-            await service.Criar(dia,hora,valor,concluído)
+            const {dia,hora,valor,concluido}= req.body
+            await service.Criar(dia,hora,valor,concluido)
             res.send({message:"criado com sucesso"})
         }catch(e){
             res.send({message: e.message})

@@ -7,9 +7,10 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/api",router,routerAtendimento)
+app.use("/api",router)
+app.use("/api",routerAtendimento)
 
-database.db.sync({force:true}).then((_)=>{
+database.db.sync({force:false}).then((_)=>{
     app.listen("3000",()=>{
         console.log("servidor rodando na porta 3000")
     });

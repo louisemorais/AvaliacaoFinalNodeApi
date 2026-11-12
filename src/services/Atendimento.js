@@ -11,9 +11,8 @@ class ServiceAtendimento{
         return model.findByPk(id);
     }
 
-    async Criar(dia, hora, valor,concluído){
-
-        await model.create(dia,hora,valor,concluído);
+    async Criar(dia, hora, valor,concluido){
+        await model.create({dia,hora,valor,concluido});
     }
 
     async Alterar(id,dia,hora,valor){
@@ -29,13 +28,13 @@ class ServiceAtendimento{
         await modelId.save()
     }
 
-    async AlterarStatus(id,concluído){
+    async AlterarStatus(id){
         if(!id || isNaN(id)){
             throw new Error("não identificado, insira os dados corretos")
         }
         const modelId= await model.findByPk(id);
 
-        modelId.concluído= !concluído;
+        modelId.concluido= !modelId.concluido;
 
         await modelId.save()
     }
