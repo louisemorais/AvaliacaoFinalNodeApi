@@ -9,9 +9,9 @@ class Database{
         this.db=new Sequelize({
             dialect:'postgres',
             username:'admin',
-            password:'rVHqEYmo2a6q7YIC7tQVUsUey18w5eqf',
-            database:'bancorenanapi',
-            host:'dpg-dblsh8p5efls73am1ljg-a.oregon-postgres.render.com',
+            password:'Upq2GcTRxymilqEJNlAnlK2fArQmrvOi',
+            database:'bancorenanapi_or72',
+            host:'dpg-dbqg3gajnfac738jh8f0-a.oregon-postgres.render.com',
             dialectOptions: {
                 ssl: {
                     require: true,
